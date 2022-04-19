@@ -7,7 +7,7 @@ export class NewsItem extends Component {
         return (
             <div className='my-3'>
                 <div className="card" style={{ width: '20rem' }}>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{source}</span>
+                    <span className="badge rounded-pill bg-danger" style={{position: 'absolute',right: '0'}}>{source}</span>
                     <img className="card-img-top" src={imageUrl ? imageUrl : "https://static.seekingalpha.com/cdn/s3/uploads/getty_images/1020075066/image_1020075066.jpg?io=getty-c-w750"} alt="News Related Display" style={{ width: '318px', height: '100px' }} />
                     <div className="card-body">
                         <h5 className="card-title">{title}
