@@ -35,7 +35,6 @@ export class News extends Component {
     }
 
     async updateNews() {
-        console.log(this.props.apiKey);
         const urlToFetch = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
         this.setState({
             loading: true
@@ -72,10 +71,10 @@ export class News extends Component {
     }
 
     fetchMoreData = async () => {
+        const urlToFetch = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
         this.setState({
             page: this.state.page + 1
         });
-        const urlToFetch = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
         // this.setState({
         //     loading: true
         // });
@@ -95,7 +94,7 @@ export class News extends Component {
 
         else return (
             <>
-                <h1 className='text-center'>NewsMonkey - Top HeadLines From {`${this.capitalizeFirstLetter(this.props.category)}`}</h1>
+                <h1 className='text-center' style={{marginTop: '60px'}}>NewsMonkey - Top HeadLines From {`${this.capitalizeFirstLetter(this.props.category)}`}</h1>
 
                 <InfiniteScroll
                     dataLength={this.state.articles.length}

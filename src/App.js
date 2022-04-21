@@ -14,9 +14,8 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        {console.log(this.apiKey)}
         <Router>
-          <Navbar />
+          <Navbar/>
           <Routes>
             {/* React will not remount the components(as they are all the same) unless they are distinguished by a unique key */}
             <Route exact path="/" element={<News apiKey={this.apiKey} key="general" pageSize={this.pageSize} country='us' category='general' />} />
